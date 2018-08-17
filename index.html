@@ -285,6 +285,308 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/async-await/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CTPlayer">
+      <meta itemprop="description" content="blog">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CTPlayer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/17/async-await/" itemprop="url">
+                  async/await
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-17 21:22:06 / 修改时间：21:27:34" itemprop="dateCreated datePublished" datetime="2018-08-17T21:22:06+08:00">2018-08-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>async function声明将定义一个返回 AsyncFunction 对象的异步函数。</p>
+<p>当调用一个async function时，会返回一个Promise对象。当这个 async 函数返回一个值时，Promise 的 resolve 方法会负责传递这个值；当 async 函数抛出异常时，Promise 的 reject 方法也会传递这个异常值。</p>
+<p>一般来说await用来等待Promise对象，但它实际可以等待任意表达式的结果，所以，await 后面实际是可以接普通函数调用或者直接量的。await 关键字仅仅在 async function中有效。如果在 async function函数体外使用 await ，你只会得到一个语法错误（SyntaxError）。</p>
+<p>async/await的具体使用场景是需要将多个异步函数同步执行时，将异步函数使用Promise对象包装，在async函数中使用await关键词调用，这样可使异步函数按照声明的顺序执行。同时，因为函数使用async关键词修饰，调用函数本身仍然是异步方法，即将多个异步方法合并为一个异步方法。</p>
+<p><img src="/2018/08/17/async-await/12230587-e200b965f202e2cf.png" alt="实际工作中用到的场景" title="实际工作中用到的场景"></p>
+<p><img src="/2018/08/17/async-await/12230587-c18a85fce88560d3.png" alt="Promise的最佳实践" title="Promise的最佳实践"></p>
+<p>Promise.all()方法将同时发出多个请求，等待耗时最长的异步方法执行完成时返回</p>
+<p><img src="/2018/08/17/async-await/12230587-5c86582953a682af.png" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/Java多线程相关（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CTPlayer">
+      <meta itemprop="description" content="blog">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CTPlayer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/17/Java多线程相关（一）/" itemprop="url">
+                  Java多线程相关（一）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-17 21:17:50 / 修改时间：21:21:46" itemprop="dateCreated datePublished" datetime="2018-08-17T21:17:50+08:00">2018-08-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h3><p>进程是受操作系统管理的基本运行单元，线程可以理解成是在进程中运行的子任务。</p>
+<p>对于单核单线程CPU而言，同时只可运行一个线程，cpu在任务之间不停的切换，由于切换速度非常快，给使用者的感受就是这些任务似乎在同时运行。这是多线程技术的优点，使用多线程也就是在使用异步。</p>
+<p>对于多核多线程CPU而言，能够同时运行的线程数增加，相应各任务之间切换速度更加快，所以多核心CPU的运行速度更加快。</p>
+<hr>
+<h3 id="线程的start-和run-方法"><a href="#线程的start-和run-方法" class="headerlink" title="线程的start()和run()方法"></a>线程的start()和run()方法</h3><p>Thread.java类中的start()方法通知“线程规划器”此线程已准备就绪，等待调用线程对象的run()方法，具有异步执行的效果。如果使用thread.run()方法就不是异步执行了，而是同步，那么此线程对象并不交给“线程规划器”来进行处理，必须等待run()方法中的代码执行完之后才能调用后面的方法。</p>
+<hr>
+<h3 id="实现多线程编程的方式有两种："><a href="#实现多线程编程的方式有两种：" class="headerlink" title="实现多线程编程的方式有两种："></a>实现多线程编程的方式有两种：</h3><p>继承Thread类，实现Runnable接口。使用继承方式来开发多线程应用程序在设计上是有局限性的，因为Java是单根继承，不支持多继承。Thread.java类也实现了Runnable接口，也就意味着Thread(Runnable target)不光可以传入Runnable接口的对象，还可以将一个Thread对象中的run()方法交由其他线程进行调用。</p>
+<hr>
+<h3 id="非线程安全："><a href="#非线程安全：" class="headerlink" title="非线程安全："></a>非线程安全：</h3><p>非线程安全主要是指多个线程对同一个对象中的同一个实例变量进行操作时会出现值被更改、值不同步的情况，进而影响程序的执行流程。通过在代码前加synchronized关键字加锁来解决问题。</p>
+<hr>
+<h3 id="currentThread-方法："><a href="#currentThread-方法：" class="headerlink" title="currentThread()方法："></a>currentThread()方法：</h3><p>返回当前代码段正在被哪个线程调用的信息。</p>
+<h3 id="isAlive-方法："><a href="#isAlive-方法：" class="headerlink" title="isAlive()方法："></a>isAlive()方法：</h3><p>测试线程是否处于活跃状态即线程已经启动且尚未终止。</p>
+<hr>
+<h3 id="判断线程状态是否是停止状态："><a href="#判断线程状态是否是停止状态：" class="headerlink" title="判断线程状态是否是停止状态："></a>判断线程状态是否是停止状态：</h3><p>this.interrupted():测试当前线程是否已经是中断状态，执行后具有将状态标志清除为false的功能。</p>
+<p>this.isInterupted():测试线程Thred对象是否已经是中断状态，但不清除状态标志。</p>
+<p>interrupt()方法只是为线程设置中断标记，线程中还需通过if(this.interrupted())和return来中断线程。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/虚拟机的三种网络模式（桥接，NAT，Host-only）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -488,7 +790,7 @@
                 
               
 
-              <time title="创建时间：2018-08-17 18:16:26 / 修改时间：20:59:57" itemprop="dateCreated datePublished" datetime="2018-08-17T18:16:26+08:00">2018-08-17</time>
+              <time title="创建时间：2018-08-17 18:16:26 / 修改时间：21:23:47" itemprop="dateCreated datePublished" datetime="2018-08-17T18:16:26+08:00">2018-08-17</time>
             
 
             
@@ -617,7 +919,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
