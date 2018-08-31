@@ -285,6 +285,173 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/java多线程相关（二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CTPlayer">
+      <meta itemprop="description" content="blog">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CTPlayer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/28/java多线程相关（二）/" itemprop="url">
+                  java多线程相关（二）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-28 10:39:13" itemprop="dateCreated datePublished" datetime="2018-08-28T10:39:13+08:00">2018-08-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-01 01:03:54" itemprop="dateModified" datetime="2018-09-01T01:03:54+08:00">2018-09-01</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="方法内的变量为线程安全"><a href="#方法内的变量为线程安全" class="headerlink" title="方法内的变量为线程安全"></a>方法内的变量为线程安全</h3><p>“非线程安全”问题存在于“实例变量”中，如果是方法内部的私有变量，则不存在“非线程安全”问题，所得结果也就是“线程”安全的了。</p>
+<hr>
+<h3 id="实例变量非线程安全"><a href="#实例变量非线程安全" class="headerlink" title="实例变量非线程安全"></a>实例变量非线程安全</h3><p>如果多个线程共同访问1个对象中的实例变量，则有可能出现“非线程安全”问题。</p>
+<hr>
+<h3 id="synchronized方法与锁对象"><a href="#synchronized方法与锁对象" class="headerlink" title="synchronized方法与锁对象"></a>synchronized方法与锁对象</h3><ul>
+<li>A线程先持有object对象的Lock锁，B线程可以以异步的方式调用object对象中的非synchronized类型的方法。</li>
+<li>A线程先持有object对象的Lock锁，B线程如果在这时调用object对象中的synchronized类型的方法则需等待，也就是同步。</li>
+</ul>
+<hr>
+<h3 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h3><p>发生脏读的情况是在读取实例变量时，此值已经被其他线程更改过了。</p>
+<hr>
+<h3 id="synchronized锁重入"><a href="#synchronized锁重入" class="headerlink" title="synchronized锁重入"></a>synchronized锁重入</h3><ul>
+<li>关键字synchronized拥有锁重入的功能，也就是在使用synchronized时，当一个线程得到一个对象锁后，再次请求此对象锁时是可以再次得到该对象的锁的。这也证明在一个synchronized方法/块的内部调用本类的其他synchronized方法/块时，是永远可以得到锁的。</li>
+<li>“可重入锁”的概念是：自己可以再次获取自己的内部锁。比如有一条线程获得了某个对象的锁，此时这个对象锁还没有释放，当其再次想要获取这个对象的锁的时候还是可以获取的，如果不可重入锁的话，就会造成死锁。</li>
+<li>可重入锁也支持在父子类继承的环境中。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/async-await/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -478,12 +645,24 @@
                 
               
 
-              <time title="创建时间：2018-08-17 21:17:50 / 修改时间：21:21:46" itemprop="dateCreated datePublished" datetime="2018-08-17T21:17:50+08:00">2018-08-17</time>
+              <time title="创建时间：2018-08-17 21:17:50" itemprop="dateCreated datePublished" datetime="2018-08-17T21:17:50+08:00">2018-08-17</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-28 10:37:42" itemprop="dateModified" datetime="2018-08-28T10:37:42+08:00">2018-08-28</time>
               
             
           </span>
@@ -534,6 +713,10 @@
 <h3 id="判断线程状态是否是停止状态："><a href="#判断线程状态是否是停止状态：" class="headerlink" title="判断线程状态是否是停止状态："></a>判断线程状态是否是停止状态：</h3><p>this.interrupted():测试当前线程是否已经是中断状态，执行后具有将状态标志清除为false的功能。</p>
 <p>this.isInterupted():测试线程Thred对象是否已经是中断状态，但不清除状态标志。</p>
 <p>interrupt()方法只是为线程设置中断标记，线程中还需通过if(this.interrupted())和return来中断线程。</p>
+<hr>
+<h3 id="yield方法"><a href="#yield方法" class="headerlink" title="yield方法"></a>yield方法</h3><p>放弃当前的cpu资源，将它让给其他的任务去占用cpu执行时间。但放弃的时间不确定，有可能刚刚放弃，马上又获得cpu时间片。</p>
+<hr>
+<h3 id="守护线程"><a href="#守护线程" class="headerlink" title="守护线程"></a>守护线程</h3><p>在java线程中有两种线程，一种是用户线程，一种是守护线程。<br>守护线程是一种特殊的线程，它的特性有“陪伴”的含义，当进程中不存在非守护线程了，则守护线程自动销毁。典型的守护线程就是垃圾回首线程，当进程中不存在非守护线程了，那么守护线程也没有存在的必要了，自动销毁。</p>
 
           
         
@@ -919,7 +1102,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

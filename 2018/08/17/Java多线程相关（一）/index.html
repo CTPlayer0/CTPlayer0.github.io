@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="CTPlayer&#39;s Blog">
 <meta property="og:description" content="进程与线程进程是受操作系统管理的基本运行单元，线程可以理解成是在进程中运行的子任务。 对于单核单线程CPU而言，同时只可运行一个线程，cpu在任务之间不停的切换，由于切换速度非常快，给使用者的感受就是这些任务似乎在同时运行。这是多线程技术的优点，使用多线程也就是在使用异步。 对于多核多线程CPU而言，能够同时运行的线程数增加，相应各任务之间切换速度更加快，所以多核心CPU的运行速度更加快。  线程">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-17T13:21:46.455Z">
+<meta property="og:updated_time" content="2018-08-28T02:37:42.292Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java多线程相关（一）">
 <meta name="twitter:description" content="进程与线程进程是受操作系统管理的基本运行单元，线程可以理解成是在进程中运行的子任务。 对于单核单线程CPU而言，同时只可运行一个线程，cpu在任务之间不停的切换，由于切换速度非常快，给使用者的感受就是这些任务似乎在同时运行。这是多线程技术的优点，使用多线程也就是在使用异步。 对于多核多线程CPU而言，能够同时运行的线程数增加，相应各任务之间切换速度更加快，所以多核心CPU的运行速度更加快。  线程">
@@ -327,12 +327,24 @@
                 
               
 
-              <time title="创建时间：2018-08-17 21:17:50 / 修改时间：21:21:46" itemprop="dateCreated datePublished" datetime="2018-08-17T21:17:50+08:00">2018-08-17</time>
+              <time title="创建时间：2018-08-17 21:17:50" itemprop="dateCreated datePublished" datetime="2018-08-17T21:17:50+08:00">2018-08-17</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-28 10:37:42" itemprop="dateModified" datetime="2018-08-28T10:37:42+08:00">2018-08-28</time>
               
             
           </span>
@@ -381,6 +393,10 @@
 <h3 id="判断线程状态是否是停止状态："><a href="#判断线程状态是否是停止状态：" class="headerlink" title="判断线程状态是否是停止状态："></a>判断线程状态是否是停止状态：</h3><p>this.interrupted():测试当前线程是否已经是中断状态，执行后具有将状态标志清除为false的功能。</p>
 <p>this.isInterupted():测试线程Thred对象是否已经是中断状态，但不清除状态标志。</p>
 <p>interrupt()方法只是为线程设置中断标记，线程中还需通过if(this.interrupted())和return来中断线程。</p>
+<hr>
+<h3 id="yield方法"><a href="#yield方法" class="headerlink" title="yield方法"></a>yield方法</h3><p>放弃当前的cpu资源，将它让给其他的任务去占用cpu执行时间。但放弃的时间不确定，有可能刚刚放弃，马上又获得cpu时间片。</p>
+<hr>
+<h3 id="守护线程"><a href="#守护线程" class="headerlink" title="守护线程"></a>守护线程</h3><p>在java线程中有两种线程，一种是用户线程，一种是守护线程。<br>守护线程是一种特殊的线程，它的特性有“陪伴”的含义，当进程中不存在非守护线程了，则守护线程自动销毁。典型的守护线程就是垃圾回首线程，当进程中不存在非守护线程了，那么守护线程也没有存在的必要了，自动销毁。</p>
 
       
     </div>
@@ -490,7 +506,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -530,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程与线程"><span class="nav-number">1.</span> <span class="nav-text">进程与线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的start-和run-方法"><span class="nav-number">2.</span> <span class="nav-text">线程的start()和run()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现多线程编程的方式有两种："><span class="nav-number">3.</span> <span class="nav-text">实现多线程编程的方式有两种：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非线程安全："><span class="nav-number">4.</span> <span class="nav-text">非线程安全：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#currentThread-方法："><span class="nav-number">5.</span> <span class="nav-text">currentThread()方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isAlive-方法："><span class="nav-number">6.</span> <span class="nav-text">isAlive()方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断线程状态是否是停止状态："><span class="nav-number">7.</span> <span class="nav-text">判断线程状态是否是停止状态：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程与线程"><span class="nav-number">1.</span> <span class="nav-text">进程与线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的start-和run-方法"><span class="nav-number">2.</span> <span class="nav-text">线程的start()和run()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现多线程编程的方式有两种："><span class="nav-number">3.</span> <span class="nav-text">实现多线程编程的方式有两种：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非线程安全："><span class="nav-number">4.</span> <span class="nav-text">非线程安全：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#currentThread-方法："><span class="nav-number">5.</span> <span class="nav-text">currentThread()方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isAlive-方法："><span class="nav-number">6.</span> <span class="nav-text">isAlive()方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断线程状态是否是停止状态："><span class="nav-number">7.</span> <span class="nav-text">判断线程状态是否是停止状态：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yield方法"><span class="nav-number">8.</span> <span class="nav-text">yield方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#守护线程"><span class="nav-number">9.</span> <span class="nav-text">守护线程</span></a></li></ol></div>
             
 
           </div>
