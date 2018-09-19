@@ -285,6 +285,338 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/18/Spring笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CTPlayer">
+      <meta itemprop="description" content="blog">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CTPlayer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/18/Spring笔记/" itemprop="url">
+                  Spring笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-18 23:19:40" itemprop="dateCreated datePublished" datetime="2018-09-18T23:19:40+08:00">2018-09-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-20 01:31:31" itemprop="dateModified" datetime="2018-09-20T01:31:31+08:00">2018-09-20</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>为了降低Java开发的复杂性，Spring采取了以下四种关键策略：</p>
+<ul>
+<li>基于POJO的轻量级和最小侵入性编程；<blockquote>
+<p>很多框架通过强迫应用继承它们的类或实现它们的接口从而导致应用与框架绑死。Spring竭力避免因自身的API而弄乱你的代码。Spring不会强迫你实现Spring规范的接口或继承Spring规范的类，相反，在基于Spring构建的应用中，它的类通常没有任何痕迹表明你使用了Spring。最坏的场景是，一个类或许会使用Spring注解，但它依旧是POJO。</p>
+</blockquote>
+</li>
+<li>通过依赖注入和面向接口实现松耦合；</li>
+<li>基于切面和惯例进行声明式编程；</li>
+<li>通过切面和模版减少样板式代码。</li>
+</ul>
+<hr>
+<p>Spring通过应用上下文（Application Context）装载bean的定义并把它们组装起来。Spring应用上下文全权负责对象的创建和组装。</p>
+<hr>
+<p>Spring自带了多个容器实现，可以归为两种不同的类型：</p>
+<ul>
+<li>bean工厂（BeanFactory），最简单的容器，提供基本的DI支持；</li>
+<li>应用上下文（ApplicationContext），基于BeanFactory构建，并提供应用框架级别的服务，例如从属性文件解析文本信息以及发布应用时间给感兴趣的事件监听者。<blockquote>
+<ul>
+<li>AnnotationConfigApplicationContext:从一个或多个基于Java配置类中加载Spring应用上下文；</li>
+<li>AnnotationConfigWebApplicationContext:从一个或多个基于Java配置类中加载Spring Web应用上下文；</li>
+<li>ClassPathXmlApplicationContext:从类路径下加载一个或多个XML配置文件中加载上下文定义，把应用上下文的定义文件作为类资源；</li>
+<li>FlieSystemXmlApplicationContext:从文件系统下的一个或多个XML配置文件中加载上下文定义；</li>
+<li>XmlWebApplicationContext:从Web应用下的一个或多个XML配置文件中加载上下文定义。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<hr>
+<p>Spring中bean的生命周期：</p>
+<p><img src="/2018/09/18/Spring笔记/IMG_0009.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/18/java多线程相关（三）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CTPlayer">
+      <meta itemprop="description" content="blog">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CTPlayer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/18/java多线程相关（三）/" itemprop="url">
+                  java多线程相关（三）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-18 21:35:38 / 修改时间：23:08:52" itemprop="dateCreated datePublished" datetime="2018-09-18T21:35:38+08:00">2018-09-18</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="wait-notify"><a href="#wait-notify" class="headerlink" title="wait/notify"></a>wait/notify</h3><ul>
+<li>wait使Object类的方法，该方法将当前线程置入预执行队列当中；</li>
+<li>wait使线程停止运行，而notify使停止的线程的继续运行；</li>
+<li>当方法wait()被执行后，锁被自动释放，但执行完notify()方法，锁却不自动释放，而是在该线程执行完成后才释放锁。</li>
+</ul>
+<hr>
+<h3 id="wait方法和interrupt方法"><a href="#wait方法和interrupt方法" class="headerlink" title="wait方法和interrupt方法"></a>wait方法和interrupt方法</h3><p>当线程呈wait状态时，调用线程对象的interrupt方法会出现InterruptedException异常。</p>
+<ul>
+<li>执行完同步代码块就会释放对象的锁；</li>
+<li>在执行同步代码块的过程中，遇到异常而导致线程终止，锁也会被释放；</li>
+<li>在执行同步代码块的过程中，执行了锁所属对象的wait方法，这个线程会释放对象锁，而此线程对象会进入线程等待池中，等待被唤醒。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/java多线程相关（二）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -348,7 +680,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-01 01:03:54" itemprop="dateModified" datetime="2018-09-01T01:03:54+08:00">2018-09-01</time>
+                <time title="修改时间：2018-09-16 23:32:13" itemprop="dateModified" datetime="2018-09-16T23:32:13+08:00">2018-09-16</time>
               
             
           </span>
@@ -399,6 +731,33 @@
 <li>“可重入锁”的概念是：自己可以再次获取自己的内部锁。比如有一条线程获得了某个对象的锁，此时这个对象锁还没有释放，当其再次想要获取这个对象的锁的时候还是可以获取的，如果不可重入锁的话，就会造成死锁。</li>
 <li>可重入锁也支持在父子类继承的环境中。</li>
 </ul>
+<hr>
+<h3 id="出现异常，锁自动释放"><a href="#出现异常，锁自动释放" class="headerlink" title="出现异常，锁自动释放"></a>出现异常，锁自动释放</h3><p>当一个线程执行的代码出现异常时，其所持有的锁会自动释放。</p>
+<hr>
+<h3 id="同步不具有继承性"><a href="#同步不具有继承性" class="headerlink" title="同步不具有继承性"></a>同步不具有继承性</h3><p>同步不可以继承。</p>
+<hr>
+<h3 id="synchronized同步代码块的使用"><a href="#synchronized同步代码块的使用" class="headerlink" title="synchronized同步代码块的使用"></a>synchronized同步代码块的使用</h3><p>当两个并发线程访问同一个对象object中的synchronized(this)同步代码块时，一段时间内只能有一个线程被执行，另一个线程必须等待当前线程执行完这个代码块以后才能执行该代码块。</p>
+<hr>
+<h3 id="synchronized代码块间的同步性"><a href="#synchronized代码块间的同步性" class="headerlink" title="synchronized代码块间的同步性"></a>synchronized代码块间的同步性</h3><ul>
+<li>在使用同步synchronized(this)代码块时需要注意的是，当一个线程访问object的一个synchronized(this)同步代码块时，其他线程对同一个object中所有其他synchronized(this)同步代码块的访问也将被阻塞，这说明synchronized使用的“对象”监视器是一个。</li>
+<li>和synchronized方法一样，synchronized(this)代码块也是锁定当前对象的。</li>
+</ul>
+<hr>
+<h3 id="将任意对象作为对象监视器"><a href="#将任意对象作为对象监视器" class="headerlink" title="将任意对象作为对象监视器"></a>将任意对象作为对象监视器</h3><p>java支持使用“任意对象“来作为”对象监视器”来实现同步功能。这个“任意对象”大多数是实例变量及方法的参数，使用格式为synchronized(非this对象x)同步代码块。可以用来解决同步代码块放在非同步方法中，由于线程调用的无序性而产生的“脏读”问题。</p>
+<ul>
+<li>当多个线程同时执行synchronized(this){}同步代码块时呈同步效果；</li>
+<li>当其他线程执行x对象中synchronized同步方法时呈同步效果；</li>
+<li>当其他线程执行x对象方法里面的synchronized(this)代码块时也呈现同步效果。</li>
+</ul>
+<hr>
+<h3 id="静态同步synchronized方法与synchronized-class-代码块"><a href="#静态同步synchronized方法与synchronized-class-代码块" class="headerlink" title="静态同步synchronized方法与synchronized(class)代码块"></a>静态同步synchronized方法与synchronized(class)代码块</h3><ul>
+<li>关键字synchronized还可以应用在static静态方法上，如果这样写，那就是对当前的*.java文件对应的class类持锁。</li>
+<li>对象锁和class锁是不同的锁，而class锁可以对类的所有对象实例起作用。</li>
+</ul>
+<hr>
+<h3 id="数据类型String的常量池特性"><a href="#数据类型String的常量池特性" class="headerlink" title="数据类型String的常量池特性"></a>数据类型String的常量池特性</h3><p>两个相同值的String常量对应的锁相同，会造成持有相同的锁，所以在大多数情况下，synchronized代码块都不使用String作为锁对象，而改用其他，比如new Object()实例化一个Object对象，它并不放入缓存中。</p>
+<hr>
+<h3 id="volatile关键字"><a href="#volatile关键字" class="headerlink" title="volatile关键字"></a>volatile关键字</h3><p>关键字volatile解决的是变量在多个线程之间的可见性；而synchronized关键字解决的是多个线程之间访问资源的同步性。<br>volatile关键字解决的是变量读时的可见性问题，但无法保证原子性，对于多个线程访问同一个实例变量还需要加同步锁。</p>
 
           
         
@@ -1102,7 +1461,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

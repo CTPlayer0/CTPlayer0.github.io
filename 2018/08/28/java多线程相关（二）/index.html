@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="CTPlayer&#39;s Blog">
 <meta property="og:description" content="方法内的变量为线程安全“非线程安全”问题存在于“实例变量”中，如果是方法内部的私有变量，则不存在“非线程安全”问题，所得结果也就是“线程”安全的了。  实例变量非线程安全如果多个线程共同访问1个对象中的实例变量，则有可能出现“非线程安全”问题。  synchronized方法与锁对象 A线程先持有object对象的Lock锁，B线程可以以异步的方式调用object对象中的非synchronized">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-31T17:03:54.792Z">
+<meta property="og:updated_time" content="2018-09-16T15:32:13.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java多线程相关（二）">
 <meta name="twitter:description" content="方法内的变量为线程安全“非线程安全”问题存在于“实例变量”中，如果是方法内部的私有变量，则不存在“非线程安全”问题，所得结果也就是“线程”安全的了。  实例变量非线程安全如果多个线程共同访问1个对象中的实例变量，则有可能出现“非线程安全”问题。  synchronized方法与锁对象 A线程先持有object对象的Lock锁，B线程可以以异步的方式调用object对象中的非synchronized">
@@ -344,7 +344,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-01 01:03:54" itemprop="dateModified" datetime="2018-09-01T01:03:54+08:00">2018-09-01</time>
+                <time title="修改时间：2018-09-16 23:32:13" itemprop="dateModified" datetime="2018-09-16T23:32:13+08:00">2018-09-16</time>
               
             
           </span>
@@ -393,6 +393,33 @@
 <li>“可重入锁”的概念是：自己可以再次获取自己的内部锁。比如有一条线程获得了某个对象的锁，此时这个对象锁还没有释放，当其再次想要获取这个对象的锁的时候还是可以获取的，如果不可重入锁的话，就会造成死锁。</li>
 <li>可重入锁也支持在父子类继承的环境中。</li>
 </ul>
+<hr>
+<h3 id="出现异常，锁自动释放"><a href="#出现异常，锁自动释放" class="headerlink" title="出现异常，锁自动释放"></a>出现异常，锁自动释放</h3><p>当一个线程执行的代码出现异常时，其所持有的锁会自动释放。</p>
+<hr>
+<h3 id="同步不具有继承性"><a href="#同步不具有继承性" class="headerlink" title="同步不具有继承性"></a>同步不具有继承性</h3><p>同步不可以继承。</p>
+<hr>
+<h3 id="synchronized同步代码块的使用"><a href="#synchronized同步代码块的使用" class="headerlink" title="synchronized同步代码块的使用"></a>synchronized同步代码块的使用</h3><p>当两个并发线程访问同一个对象object中的synchronized(this)同步代码块时，一段时间内只能有一个线程被执行，另一个线程必须等待当前线程执行完这个代码块以后才能执行该代码块。</p>
+<hr>
+<h3 id="synchronized代码块间的同步性"><a href="#synchronized代码块间的同步性" class="headerlink" title="synchronized代码块间的同步性"></a>synchronized代码块间的同步性</h3><ul>
+<li>在使用同步synchronized(this)代码块时需要注意的是，当一个线程访问object的一个synchronized(this)同步代码块时，其他线程对同一个object中所有其他synchronized(this)同步代码块的访问也将被阻塞，这说明synchronized使用的“对象”监视器是一个。</li>
+<li>和synchronized方法一样，synchronized(this)代码块也是锁定当前对象的。</li>
+</ul>
+<hr>
+<h3 id="将任意对象作为对象监视器"><a href="#将任意对象作为对象监视器" class="headerlink" title="将任意对象作为对象监视器"></a>将任意对象作为对象监视器</h3><p>java支持使用“任意对象“来作为”对象监视器”来实现同步功能。这个“任意对象”大多数是实例变量及方法的参数，使用格式为synchronized(非this对象x)同步代码块。可以用来解决同步代码块放在非同步方法中，由于线程调用的无序性而产生的“脏读”问题。</p>
+<ul>
+<li>当多个线程同时执行synchronized(this){}同步代码块时呈同步效果；</li>
+<li>当其他线程执行x对象中synchronized同步方法时呈同步效果；</li>
+<li>当其他线程执行x对象方法里面的synchronized(this)代码块时也呈现同步效果。</li>
+</ul>
+<hr>
+<h3 id="静态同步synchronized方法与synchronized-class-代码块"><a href="#静态同步synchronized方法与synchronized-class-代码块" class="headerlink" title="静态同步synchronized方法与synchronized(class)代码块"></a>静态同步synchronized方法与synchronized(class)代码块</h3><ul>
+<li>关键字synchronized还可以应用在static静态方法上，如果这样写，那就是对当前的*.java文件对应的class类持锁。</li>
+<li>对象锁和class锁是不同的锁，而class锁可以对类的所有对象实例起作用。</li>
+</ul>
+<hr>
+<h3 id="数据类型String的常量池特性"><a href="#数据类型String的常量池特性" class="headerlink" title="数据类型String的常量池特性"></a>数据类型String的常量池特性</h3><p>两个相同值的String常量对应的锁相同，会造成持有相同的锁，所以在大多数情况下，synchronized代码块都不使用String作为锁对象，而改用其他，比如new Object()实例化一个Object对象，它并不放入缓存中。</p>
+<hr>
+<h3 id="volatile关键字"><a href="#volatile关键字" class="headerlink" title="volatile关键字"></a>volatile关键字</h3><p>关键字volatile解决的是变量在多个线程之间的可见性；而synchronized关键字解决的是多个线程之间访问资源的同步性。<br>volatile关键字解决的是变量读时的可见性问题，但无法保证原子性，对于多个线程访问同一个实例变量还需要加同步锁。</p>
 
       
     </div>
@@ -429,6 +456,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/18/java多线程相关（三）/" rel="prev" title="java多线程相关（三）">
+                java多线程相关（三） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -498,7 +529,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -538,7 +569,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法内的变量为线程安全"><span class="nav-number">1.</span> <span class="nav-text">方法内的变量为线程安全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例变量非线程安全"><span class="nav-number">2.</span> <span class="nav-text">实例变量非线程安全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized方法与锁对象"><span class="nav-number">3.</span> <span class="nav-text">synchronized方法与锁对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脏读"><span class="nav-number">4.</span> <span class="nav-text">脏读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized锁重入"><span class="nav-number">5.</span> <span class="nav-text">synchronized锁重入</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法内的变量为线程安全"><span class="nav-number">1.</span> <span class="nav-text">方法内的变量为线程安全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例变量非线程安全"><span class="nav-number">2.</span> <span class="nav-text">实例变量非线程安全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized方法与锁对象"><span class="nav-number">3.</span> <span class="nav-text">synchronized方法与锁对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脏读"><span class="nav-number">4.</span> <span class="nav-text">脏读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized锁重入"><span class="nav-number">5.</span> <span class="nav-text">synchronized锁重入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#出现异常，锁自动释放"><span class="nav-number">6.</span> <span class="nav-text">出现异常，锁自动释放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步不具有继承性"><span class="nav-number">7.</span> <span class="nav-text">同步不具有继承性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized同步代码块的使用"><span class="nav-number">8.</span> <span class="nav-text">synchronized同步代码块的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized代码块间的同步性"><span class="nav-number">9.</span> <span class="nav-text">synchronized代码块间的同步性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将任意对象作为对象监视器"><span class="nav-number">10.</span> <span class="nav-text">将任意对象作为对象监视器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态同步synchronized方法与synchronized-class-代码块"><span class="nav-number">11.</span> <span class="nav-text">静态同步synchronized方法与synchronized(class)代码块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型String的常量池特性"><span class="nav-number">12.</span> <span class="nav-text">数据类型String的常量池特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#volatile关键字"><span class="nav-number">13.</span> <span class="nav-text">volatile关键字</span></a></li></ol></div>
             
 
           </div>
